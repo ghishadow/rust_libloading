@@ -14,11 +14,12 @@ keywords = ["dlopen", "load", "shared", "dylib"]
 categories = ["api-bindings"]
 rust-version = "1.40.0"
 
-[target.'cfg(windows)'.dependencies.winapi]
-version = "0.3"
+[target.'cfg(windows)'.dependencies.windows-sys]
+version = "0.36.1"
 features = [
-    "errhandlingapi",
-    "libloaderapi",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Diagnostics_Debug", 
+    "Win32_Foundation"
 ]
 
 [target.'cfg(unix)'.dependencies.cfg-if]
